@@ -51,3 +51,16 @@ ML_assignment_2/
 დარჩენილი NaN-ებისთვის ვიყენებ `SimpleImputer(strategy='median')`-ს, რადგან median უფრო მდგრადია outlier-ების მიმართ ვიდრე mean.
 
 - **XGBoost-ში Imputation:** XGBoost-ს არ სჭირდება missing value ების შევსება Imputer-ით. ყოველ split-ზე ის თვითონ წყვეტს, რომელ მხარეს გაგზავნოს missing values. ამიტომ XGBoost-ის pipeline-ში imputer-ს არ ვიყენებ. ეს ერთ-ერთი მისი მთავარი უპირატესობაა სხვა მოდელებთან შედარებით.
+
+## Feature Selection
+
+Logistic Regression-ისთვის გავტესტე ორი სხვადასხვა(Correlation only და IV + Correlation) ხოლო tree-based მოდელებისთვის (RF, AdaBoost) დავტესტე სამი სხვადასხვა სელექციის/ფილტრის სტრატეგია(Correlation only, IV + Correlation, TreeImportance):
+
+
+### 1. Correlation Filter
+
+ფილტრავს იმ ცვლადებს, რომლებიც ერთმანეთთან 0.9-ზე მეტადაა კორელირებული. (0.9 threshold ი ისედაც ბევრ ცვლადს ყრიდა ამიტომ მასზე დაბალი აღარ ავიღე). წყვილებიდან ერთს ტოვებს ეს ფილტრი (ნაკლებად redundant-ს). ეს ეხმარება კოლინეარულობის შემცირებას, განსაკუთრებით LR-ისთვის. სვეტების რაოდენობა 277-დან **148**-მდე მცირდება.
+
+### 2. IV (Information Value) + Correlation
+
+IV (Information Value) ზომავს თითოეული feature-ის predictive power-ს binary target-ის მიმართ. threshold = 0.02  IV თუ ნაკლებია 0.02 ზე ამ სვეტებს გადავყრით). შემდეგ Correlation Filter-ი თავის რიგზე ფილტრავს redundant ცვლადებს. სვეტების რაოდენობა 277 -> 192 -> **106**.
