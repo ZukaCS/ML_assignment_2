@@ -80,9 +80,9 @@ ML_assignment_2/
 
 EDA-ში ვნახე, რომ დროზე დამოკიდებულია fraud-ი.
 
-### 3. User-id აგრეგაციები
+### 3. User დამატებითი feature-ები.
 
-ხელოვნურ `user_id'-ს ვქმნი `card1_card2_addr1_P_emaildomain` შერწყმით. შემდეგ თითოეული user-ისთვის გამოვითვლი:
+თითოეული user ისთვის ვამატებ შემდეგ feture-ებს.
 
 - `user_tr_count` — რამდენ ტრანზაქციას აკეთებს ეს user-ი.
 - `user_amt_mean` — საშუალო თანხა.
