@@ -54,6 +54,40 @@ ML_assignment_2/
 - **XGBoost-ში Imputation:** XGBoost-ს არ სჭირდება missing value ების შევსება Imputer-ით. ყოველ split-ზე ის თვითონ წყვეტს, რომელ მხარეს გაგზავნოს missing values. ამიტომ XGBoost-ის pipeline-ში imputer-ს არ ვიყენებ. ეს ერთ-ერთი მისი მთავარი უპირატესობაა სხვა მოდელებთან შედარებით.
 
 ---
+## Feature Engineering
+
+ყველა მოდელისთვის FeatureAdder transformer-ს ვიყენებ, რომელიც ქმნის შემდეგ ახალ ცვლადებს:
+
+### 1. TransactionAmt-ის ტრანსფორმაციები
+
+- `TransactionAmt_logarithm` = `log(1 + TransactionAmt)` — გადააქვს ტრანზაქციების რაოდენობების skewed განაწილება უფრო ნორმალურთან. როგორც EDA-ში ვნახე ეს განაწილება მარცხნივ იყო გადახრილი.
+
+- `TransactionAmt_cents` = `TransactionAmt % 1` — ცენტების რაოდენობა (შეიძლება რამეს ნიშნავდეს. თუ თანხის რაოდენობა .0 ზე მთავრდება ან არ მთავრდება).
+
+### 2. დროითი feature-ები TransactionDT-დან
+
+- `hour_of_transaction` ტრანზაქციის დრო - საათი.
+- `day_of_transaction` ტრანზაქციის დრო - კვირა დღე.
+
+EDA-ში ვნახე, რომ დროზე დამოკიდებულია fraud-ი.
+
+### 3. User-id აგრეგაციები
+
+ხელოვნურ `user_id'-ს ვქმნი `card1_card2_addr1_P_emaildomain` შერწყმით. შემდეგ თითოეული user-ისთვის გამოვითვლი:
+
+- `user_tr_count` — რამდენ ტრანზაქციას აკეთებს ეს user-ი.
+- `user_amt_mean` — საშუალო თანხა.
+- `user_amt_standart_dev` — თანხის სტანდარტული გადახრა.
+- `user_amt_zscore` = `(amt - mean) / std` — როგორ განსხვავდება ეს ტრანზაქცია user-ის ჩვეულებრივ პატერნისგან.
+- `user_tr_count_logarithm` = `log(count)`. - ტრანზაქციების რაოდენობის ლოგარითმი.
+
+
+### 4. Categorical Encoding
+
+ყველა object-ტიპის სვეტს(კატეგორიულებს) Label Encoding-ით ვცვლი (NaN -> "missing", unseen categories -> "missing"). ეს One-Hot Encoding-ს იმით შეიძლება ჯობდეს, რომ one-hot-მა შეიძლება ძალიან ბევრი ახალი სვეტი დაამატოს (DeviceInfo-ს მაგალითად 1786 უნიკალური მნიშვნელობა აქვს. One-Hot აქ უბრალოდ შეუძლებელი იქნებოდა თუ Data Cleaning ასეთ სვეტებს არ გადაყრიდა მანამდე).
+
+---
+
 
 ## Feature Selection
 
