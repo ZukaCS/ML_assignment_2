@@ -183,7 +183,7 @@ class imbalance-ის გასათვალისწინებლად �
 
 გავტესტე რამდენიმე ჰიპერპარამეტრების კონფიგურაცი , რომელიც მოიცავს `n_estimators` - [10, 50, 100, 200, 300, 500], `max_depth` - {2, 3, 5, 10, 15, 20, None}, `min_samples_leaf` ∈ {1, 5, 10, 20, 50}.
 
-| Config | train_auc | test_auc | diff | test_f1 | test_precision | test_recall |
+| Hyperparameters | train_auc | test_auc | diff | test_f1 | test_precision | test_recall |
 |--------|-----------|----------|------|---------|----------------|-------------|
 | n=500, d=None, l=1 | 1.0000 | 0.9460 | +0.0540 | 0.5970 | 0.9421 | 0.4370 |
 | n=300, d=None, l=1 | 1.0000 | 0.9453 | +0.0547 | 0.5969 | 0.9416 | 0.4370 | 
@@ -217,7 +217,7 @@ class imbalance-ის გასათვალისწინებლად �
 
 გავტესტე რამდენიმე ჰიპერპარამეტრების კონფიგურაცია `n_estimators` [5, 10, 50, 100, 200, 300] და `learning_rate` [0.01, 0.1, 0.5, 1.0, 2.0, 3.0].
 
-| Config | train_auc | test_auc | diff | test_f1 | test_precision | test_recall |
+| Hyperparameters | train_auc | test_auc | diff | test_f1 | test_precision | test_recall |
 |--------|-----------|----------|------|---------|----------------|-------------|
 | **n=300, lr=1.0** **არჩეული** | **0.8659** | **0.8638** | +0.0021 | 0.2463 | 0.8108 | 0.1452 | 
 | n=200, lr=1.0 | 0.8635 | 0.8618 | +0.0016 | 0.2259 | 0.8044 | 0.1314 | 
@@ -260,7 +260,7 @@ XGBoost-ს native NaN handling აქვს, ამიტომ მაინტ
 
 #### XGBoost შედეგები
 
-| Config | train_auc | test_auc | diff | test_f1 | test_precision | test_recall |
+| Hyperparameters | train_auc | test_auc | diff | test_f1 | test_precision | test_recall |
 |--------|-----------|----------|------|---------|----------------|-------------|
 | n=1000, d=12, lr=0.3, no reg | **1.0000** | 0.9654 | +0.0346 | 0.8090 | 0.9274 | 0.7174 |
 | n=500, d=20, lr=0.5, no reg | 1.0000 | 0.9647 | +0.0353 | 0.7952 | 0.9205 | 0.7000 | 
