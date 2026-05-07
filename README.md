@@ -16,10 +16,10 @@
 ML_assignment_2/
 ├── images/
 ├── EDA.ipynb   
-├── model_experiment_LogisticRegression.ipynb   
-├── model_experiment_RandomForest.ipynb     
-├── model_experiment_AdaBoost.ipynb    
-├── model_experiment_XGBoost.ipynb     
+├── model-experiment-logisticregression.ipynb   
+├── model-experiment-randomforest.ipynb     
+├── model-experiment-adaBoost.ipynb    
+├── model-experiment-xgboost.ipynb     
 ├── model-inference.ipynb
 └── README.md
 ```
@@ -29,10 +29,10 @@ ML_assignment_2/
 |-------|--------|
 | `images` | სურათები EDA დან |
 | `EDA.ipynb ` | ნოუთბუქი Explanatory Data Analysis -თვის |
-| `model_experiment_LogisticRegression.ipynb ` | ნოუთბუქი LogisticRegression-ის ტრენინგისთივის |
-| `model_experiment_RandomForest.ipynb  ` | ნოუთბუქი RandomForest-ის ტრენინგისთივის |
-| `model_experiment_AdaBoost.ipynb ` | ნოუთბუქი AdaBoost-ის ტრენინგისთივის |
-| `model_experiment_XGBoost.ipynb    ` | ნოუთბუქი XGBoost-ის ტრენინგისთივის |
+| `model-experiment-LogisticRegression.ipynb ` | ნოუთბუქი LogisticRegression-ის ტრენინგისთივის |
+| `model-experiment-RandomForest.ipynb  ` | ნოუთბუქი RandomForest-ის ტრენინგისთივის |
+| `model-experiment-AdaBoost.ipynb ` | ნოუთბუქი AdaBoost-ის ტრენინგისთივის |
+| `model-experiment-XGBoost.ipynb    ` | ნოუთბუქი XGBoost-ის ტრენინგისთივის |
 | `model-inference.ipynb` | საუკეთესო მოდელის ჩამოტვირთვა და kaggle-სთვის submission-ის შექმნა |
 | `README.md` | პროექტის დოკუმენტაცია |
 
