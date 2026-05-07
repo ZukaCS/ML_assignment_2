@@ -114,7 +114,7 @@ class imbalance-ის გასათვალისწინებლად �
 
 **Top 3 საუკეთესო მოდელი test_auc მიხედვით:**
 
-| hyperparams | train_auc | test_auc | diff | test_f1 | test_recall | test_precision |
+| hyperparameters | train_auc | test_auc | diff | test_f1 | test_recall | test_precision |
 |--------|-----------|----------|------|---------|-------------|----------------|
 | **C=0.1, l1** | 0.8298 | **0.8291** | +0.0007 | 0.1735 | 0.7464 | 0.0981 |
 | C=1.0, l1 | 0.8298 | 0.8291 | +0.0007 | 0.1735 | 0.7464 | 0.0981 |
@@ -122,7 +122,7 @@ class imbalance-ის გასათვალისწინებლად �
 
 
 **ყველაზე ცუდი მოდელი**
-| Config | train_auc | test_auc | diff |
+| hyperparameters | train_auc | test_auc | diff |
 |--------|-----------|----------|------|
 | C=0.0001, l1 | 0.8083 | 0.8060 | -0.0023 | 
 
