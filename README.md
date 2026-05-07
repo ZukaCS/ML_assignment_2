@@ -298,4 +298,4 @@ Inference notebook-ში პირდაპირ Model Registry-დან ი�
 - ყოველი ცალკეული preprocessing ნაბიჯი (Cleaning, FE, Encoding, Imputation, Feature Selection)
 - ყველა ჰიპერპარამეტრის კონფიგურაცია მისი მეტრიკებით
 - ყველა მოდელი.
-- საუკეთესო კონფიგურაციები დარეგისტრირებულია Models-ში.
+- საუკეთესო მოდელები თითოეული არქიტექტურიდან დარეგისტრირებულია Models-ში.
