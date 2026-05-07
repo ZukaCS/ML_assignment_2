@@ -73,6 +73,8 @@ ML_assignment_2/
 
 ### 2. დროითი feature-ები TransactionDT-დან
 
+![fraud by dt](images/fraud_dt.png)
+
 - `hour_of_transaction` ტრანზაქციის დრო - საათი.
 - `day_of_transaction` ტრანზაქციის დრო - კვირა დღე.
 
