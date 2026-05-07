@@ -12,9 +12,20 @@
 
 ```
 ML_assignment_2/
+├── EDA.ipynb   
 ├── model_experiment_LogisticRegression.ipynb   
 ├── model_experiment_RandomForest.ipynb     
 ├── model_experiment_AdaBoost.ipynb    
 ├── model_experiment_XGBoost.ipynb     
 └── README.md
 ```
+## ფაილების აღწერა
+
+| ფაილი | აღწერა |
+|-------|--------|
+| `EDA.ipynb ` | ნოუთბუქი Explanatory Data Analysis -თვის |
+| `model_experiment_LogisticRegression.ipynb ` | ნოუთბუქი LogisticRegression-ის ტრენინგისთივის |
+| `model_experiment_RandomForest.ipynb  ` | ნოუთბუქი RandomForest-ის ტრენინგისთივის |
+| `model_experiment_AdaBoost.ipynb ` | ნოუთბუქი AdaBoost-ის ტრენინგისთივის |
+| `model_experiment_XGBoost.ipynb    ` | ნოუთბუქი XGBoost-ის ტრენინგისთივის |
+| `README.md` | პროექტის დოკუმენტაცია |
