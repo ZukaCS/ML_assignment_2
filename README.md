@@ -291,7 +291,7 @@ Inference notebook-ში პირდაპირ Model Registry-დან ი�
 
 ![Kaggle final result](images/kaggle_result.png)
 
-ყველა run დარეგისტრირებულია: [DagsHub-ზე](https://dagshub.com/ZukaCS/ML_assignment_2)
+ყველა run დალოგილია: [DagsHub-ზე](https://dagshub.com/ZukaCS/ML_assignment_2)
 
 თითოეულ მოდელის experiment-ში დაილოგა:
 
