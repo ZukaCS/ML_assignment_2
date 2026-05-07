@@ -65,6 +65,7 @@ ML_assignment_2/
 ყველა მოდელისთვის FeatureAdder transformer-ს ვიყენებ, რომელიც ქმნის შემდეგ ახალ ცვლადებს:
 
 ### 1. TransactionAmt-ის ტრანსფორმაციები
+![transactionSkew](images/transaction_log.png)
 
 - `TransactionAmt_logarithm` = `log(1 + TransactionAmt)` — გადააქვს ტრანზაქციების რაოდენობების skewed განაწილება უფრო ნორმალურთან. როგორც EDA-ში ვნახე ეს განაწილება მარცხნივ იყო გადახრილი.
 
