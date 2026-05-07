@@ -176,6 +176,8 @@ class imbalance-ის გასათვალისწინებლად �
 
 აქედან ავირჩიე პირველი მოდელი საუკეთესოდ, top 3 საუკეთესო მოდელიდან და დავლოგე mlflow ზე თავისი პაიპლაინით. ასევე დავარეგისტრირე Models-ში.
 
+![AUROC_XGB](images/LR.png)
+
 ### 2. Random Forest
 
 გავტესტე რამდენიმე ჰიპერპარამეტრების კონფიგურაცი , რომელიც მოიცავს `n_estimators` - [10, 50, 100, 200, 300, 500], `max_depth` - {2, 3, 5, 10, 15, 20, None}, `min_samples_leaf` ∈ {1, 5, 10, 20, 50}.
@@ -206,8 +208,9 @@ class imbalance-ის გასათვალისწინებლად �
 
 - საბოლოოდ ავარჩიე შუალედური მოდელი, რომელსაც diff ანუ train-სა და ტესტს შორის დიდი განსხვავება არ ჰქონდა და შედარებით კარგი შედეგი ჰქონდა test_auc ში. ამ შემთხვევაში მოდელი უფრო ჯანსაღად ა-general-იზებს შედეგებს.
 
-
 არჩეული მოდელი დავლოგე თავისი პაიპლაინით mlflow -ზე და დავარეგისტრირე მოდელებში.
+
+![AUROC_RF](images/RF.png)
 
 ### 3. AdaBoost
 
@@ -260,6 +263,7 @@ class imbalance-ის გასათვალისწინებლად �
 
 - ასევე ქვედა მოდელში სხვებთან შედარებით ქვაქვს **underfit** რაც სიღრმის სიმცირის ბრალია და n_estimator- ების როდენობის.
 
+![AUROC_XGB](images/XGB_ROC.png)
 
 ## ყველა მოდელის შედარება
 
@@ -284,7 +288,7 @@ XGBoost მკაფიოდ დომინირებს *ROC AUC* მეტ
 
 Inference notebook-ში პირდაპირ Model Registry-დან იტვირთება `IEEE_Fraud_XGBoost`-ის pipeline, რომელიც raw test data ზე ეშვება და აგენერირებს submission.csv-ს
 
-
+![Kaggle final result](images/kaggle_result.png)
 
 ყველა run დარეგისტრირებულია: [DagsHub-ზე](https://dagshub.com/ZukaCS/ML_assignment_2)
 
