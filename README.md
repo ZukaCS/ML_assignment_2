@@ -32,6 +32,7 @@ ML_assignment_2/
 | `model-inference.ipynb` | საუკეთესო მოდელის ჩამოტვირთვა და kaggle-სთვის submission-ის შექმნა |
 | `README.md` | პროექტის დოკუმენტაცია |
 
+---
 
 ## მონაცემთა დამუშავება / გაწმენდა (Data Preprocessing / Cleaning)
 
@@ -51,6 +52,8 @@ ML_assignment_2/
 დარჩენილი NaN-ებისთვის ვიყენებ `SimpleImputer(strategy='median')`-ს, რადგან median უფრო მდგრადია outlier-ების მიმართ ვიდრე mean.
 
 - **XGBoost-ში Imputation:** XGBoost-ს არ სჭირდება missing value ების შევსება Imputer-ით. ყოველ split-ზე ის თვითონ წყვეტს, რომელ მხარეს გაგზავნოს missing values. ამიტომ XGBoost-ის pipeline-ში imputer-ს არ ვიყენებ. ეს ერთ-ერთი მისი მთავარი უპირატესობაა სხვა მოდელებთან შედარებით.
+
+---
 
 ## Feature Selection
 
@@ -81,4 +84,35 @@ IV (Information Value) ზომავს თითოეული feature-ი�
 | **LR** | val AUC: 0.8296 | val AUC: 0.8291 | — | **IV+Corr** (ნაკლები features და თითქმის იგივე AUC) |
 | **RF** | val AUC: 0.8855 | val AUC: 0.8881 | val AUC: 0.8986 | **Tree Importance** |
 | **AdaBoost** | val AUC: 0.8440 | val AUC: 0.8418 | val AUC: 0.8589 | **Tree Importance** |
+
+
+---
+## ტრენინგი და ექსპერიმენტები
+
+| მეტრიკა | აღწერა |
+|---------|--------|
+| `train_auc` | AUC train set-ზე |
+| `test_auc` | AUC test set-ზე |
+| `auc_diff` | train - test (overfitting indicator) |
+| `train_f1`, `test_f1` | F1 score train/test |
+| `train_precision`, `test_precision` | Precision train/test |
+| `train_recall`, `test_recall` | Recall train/test |
+
+class imbalance-ის გასათვალისწინებლად ვიყენებ `class_weight='balanced'. როგორც EDA ში ვნახეთ დაახლოებით 97% ია non-fraud ტრანზაქცია.
+
+
+### 1. Logistic Regression
+
+ვტესტავ სხვადასხვა `C`-ს (C რეგულარიზაციის პარამეტრია) და `penalty` (l1/l2). LR-ისთვის ცალკე Cross Validation (5-fold) გავუშვი default config-ზე. საშუალო val AUC = 0.8283 ± 0.0031, რამაც მიმანიშნა, რომ ეს სტაბილური მოდელია და აქამდე ყველაფერი ნორმალურად გავაკეთე.
+
+#### Logistic Regression შედეგები (top 3 best + top 3 worst)
+
+**Top 3 საუკეთესო მოდელი test_auc მიხედვით:**
+
+| hyperparams | train_auc | test_auc | diff | test_f1 | test_recall | test_precision |
+|--------|-----------|----------|------|---------|-------------|----------------|
+| **C=0.1, l1** | 0.8298 | **0.8291** | +0.0007 | 0.1735 | 0.7464 | 0.0981 |
+| C=1.0, l1 | 0.8298 | 0.8291 | +0.0007 | 0.1735 | 0.7464 | 0.0981 |
+| C=10.0, l1 | 0.8298 | 0.8291 | +0.0007 | 0.1735 | 0.7464 | 0.0981 |
+
 
