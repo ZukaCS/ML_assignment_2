@@ -54,7 +54,9 @@ ML_assignment_2/
 
 ## Feature Selection
 
-Logistic Regression-ისთვის გავტესტე ორი სხვადასხვა(Correlation only და IV + Correlation) ხოლო tree-based მოდელებისთვის (RF, AdaBoost) დავტესტე სამი სხვადასხვა სელექციის/ფილტრის სტრატეგია(Correlation only, IV + Correlation, TreeImportance):
+- ეს ფაზა XGBoost-ს არ ეხება, რადგან მას ჩაშენებული selector-ი ისედაც აქვს.
+
+- Logistic Regression-ისთვის გავტესტე ორი სხვადასხვა(Correlation only და IV + Correlation) ხოლო tree-based მოდელებისთვის (RF, AdaBoost) დავტესტე სამი სხვადასხვა სელექციის/ფილტრის სტრატეგია(Correlation only, IV + Correlation, TreeImportance):
 
 
 ### 1. Correlation Filter
@@ -68,3 +70,15 @@ IV (Information Value) ზომავს თითოეული feature-ი�
 ### 3. Tree Importance
 
 ვატრენინგებ პატარა Random Forest-ს (n_estimators=50, max_depth=10) პარამეტრებით,  ვტოვებ top 80 ცვლადს რომელსაც ყველაზე დიდი importance მიანიჭა ამ RandomForest-მა. ამ მიდგომამ **tree-based** მოდელებში საუკეთესო შედეგი მოიტანა, ვინაიდან tree importance იჭერს არაწრფივ დამოკიდებულებებს, რომელსაც ზედა ორი ფილტრი შეიძლება ვერ ამჩნევდეს კარგად.
+
+--
+ეს სამივე ფილტრი გავტესტე baseline მოდელებზე ერთჯერადად. საუკეთესო შედეგის მქონე filter თითოეული მოდელისთვის ავირჩიე საბოლოო ფილტრად Training და Hyperparameter tuning ფაზისთვის. LR-ისთვის IV+Corr ავირჩიე იმიტომ, რომ 30% ნაკლები feature-ით (106 vs 148) იგივე შედეგი მიიღო დაახლოებით ამიტომ, ტრენინგი უფრო სწრაფი იქნებოდა tuning-ის ფაზაში. Tree based მოდელებში კი TreeImportance ფილტრმა უკეთესი შედეგი დადო, ვიდრე ამ ფილტრის გარეშე.
+
+(ფილტრს იგივე Feature Selector-ს ვეძახი) 
+
+| მოდელი | Correlation only | IV+Corr | Tree Importance  | საბოლოო არჩევანი |
+|--------|------------------------|---------------|----------------------|--------------|
+| **LR** | val AUC: 0.8296 | val AUC: 0.8291 | — | **IV+Corr** (ნაკლები features და თითქმის იგივე AUC) |
+| **RF** | val AUC: 0.8855 | val AUC: 0.8881 | val AUC: 0.8986 | **Tree Importance** |
+| **AdaBoost** | val AUC: 0.8440 | val AUC: 0.8418 | val AUC: 0.8589 | **Tree Importance** |
+
