@@ -64,3 +64,7 @@ Logistic Regression-ისთვის გავტესტე ორი სხ
 ### 2. IV (Information Value) + Correlation
 
 IV (Information Value) ზომავს თითოეული feature-ის predictive power-ს. threshold = 0.02  IV თუ ნაკლებია 0.02 ზე ამ სვეტებს გადავყრით). შემდეგ Correlation Filter-ი ფილტრავს redundant ცვლადებს. სვეტების რაოდენობა 277 -> 192 -> **106**.
+
+### 3. Tree Importance
+
+ვატრენინგებ პატარა Random Forest-ს (n_estimators=50, max_depth=10) პარამეტრებით,  ვტოვებ top 80 ცვლადს რომელსაც ყველაზე დიდი importance მიანიჭა ამ RandomForest-მა. ამ მიდგომამ **tree-based** მოდელებში საუკეთესო შედეგი მოიტანა, ვინაიდან tree importance იჭერს არაწრფივ დამოკიდებულებებს, რომელსაც ზედა ორი ფილტრი შეიძლება ვერ ამჩნევდეს კარგად.
