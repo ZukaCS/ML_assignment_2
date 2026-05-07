@@ -176,7 +176,7 @@ class imbalance-ის გასათვალისწინებლად �
 
 აქედან ავირჩიე პირველი მოდელი საუკეთესოდ, top 3 საუკეთესო მოდელიდან და დავლოგე mlflow ზე თავისი პაიპლაინით. ასევე დავარეგისტრირე Models-ში.
 
-![AUROC_XGB](images/LR.png)
+![AUROC_XGB](images/LR_ROC.png)
 
 ### 2. Random Forest
 
@@ -210,7 +210,7 @@ class imbalance-ის გასათვალისწინებლად �
 
 არჩეული მოდელი დავლოგე თავისი პაიპლაინით mlflow -ზე და დავარეგისტრირე მოდელებში.
 
-![AUROC_RF](images/RF.png)
+![AUROC_RF](images/RF_ROC.png)
 
 ### 3. AdaBoost
 
