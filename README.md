@@ -17,6 +17,7 @@ ML_assignment_2/
 ├── model_experiment_RandomForest.ipynb     
 ├── model_experiment_AdaBoost.ipynb    
 ├── model_experiment_XGBoost.ipynb     
+├── model-inference.ipynb
 └── README.md
 ```
 ## ფაილების აღწერა
@@ -28,4 +29,5 @@ ML_assignment_2/
 | `model_experiment_RandomForest.ipynb  ` | ნოუთბუქი RandomForest-ის ტრენინგისთივის |
 | `model_experiment_AdaBoost.ipynb ` | ნოუთბუქი AdaBoost-ის ტრენინგისთივის |
 | `model_experiment_XGBoost.ipynb    ` | ნოუთბუქი XGBoost-ის ტრენინგისთივის |
+| `model-inference.ipynb` | საუკეთესო მოდელის ჩამოტვირთვა და kaggle-სთვის submission-ის შექმნა |
 | `README.md` | პროექტის დოკუმენტაცია |
